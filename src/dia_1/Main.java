@@ -116,5 +116,7 @@ public class Main {
 //        return true;
 //    }
     //ej9
+        Scanner scan = new Scanner(System.in);
+
     }
 }
