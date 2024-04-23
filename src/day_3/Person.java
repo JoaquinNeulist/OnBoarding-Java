@@ -1,6 +1,8 @@
 package day_3;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Person {
     private String fName;
@@ -9,16 +11,16 @@ public class Person {
     private  int age;
     private double height;
     private boolean married;
-    private String[] petsNames;
+    private Set<Pet> pets = new HashSet<>();
 
-    public Person(String fName, String lName, String identifyCard, int age, double height, boolean married, String[] petsNames) {
+    public Person(String fName, String lName, String identifyCard, int age, double height, boolean married) {
         this.fName = fName;
         this.lName = lName;
         this.identifyCard = identifyCard;
         this.age = age;
         this.height = height;
         this.married = married;
-        this.petsNames = petsNames;
+        this.pets = new HashSet<>();
     }
 
     public String getfName() {
@@ -69,26 +71,28 @@ public class Person {
         this.married = married;
     }
 
-    public String[] getPetsNames() {
-        return petsNames;
+    public Set<Pet> getPets() {
+        return pets;
     }
 
-    public void setPetsNames(String[] petsNames) {
-        this.petsNames = petsNames;
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
+    }
+
+    public void addPet(Pet pet){
+        this.pets.add(pet);
+        pet.setOwner(this);
     }
 
     public void presentCard(){
         System.out.println("Hello my name is "+fName+" "+lName+" and my identify card is "+identifyCard);
         System.out.println("i have "+age+" and "+height+" cm");
         System.out.println("I am "+ (married ? "married":"not married"));
-        if (petsNames.length > 0){
-            System.out.println("I have "+petsNames.length+" pet(s):");
-            for (String petName : petsNames){
-                System.out.println("- "+petName);
-            }
-            System.out.println(" ");
-        }else{
+        if (pets.isEmpty()){
             System.out.println("I don't have pets");
+        }else{
+            for (Pet pet : pets) System.out.println("- " + pet.getPetName()+", Type: "+ pet.getType()+". age: "+pet.getPetAge());
+            System.out.println("I have "+pets.size()+" pet(s):");
         }
     }
 }

@@ -1,11 +1,13 @@
 package day_3;
 public class Main {
     public static void main(String[] args) {
-        String[] myPets = {"Mila", "Cory", "Franchesca"};
-        Person me = new Person("Joaquin","Neulist","123457869",19, 1.80, false,myPets);
+        Person me = new Person("Joaquin", "Neulist", "123456789", 19, 1.80, false);
+        Pet mila = new Pet("Mila", PetType.CAT, 3);
+        Pet cory = new Pet("Cory", PetType.CAT, 4);
+        Pet franchesca = new Pet("Franchesca", PetType.CAT, 14);
+        me.addPet(mila);
+        me.addPet(cory);
+        me.addPet(franchesca);
         me.presentCard();
-        String[] friendPets = {"Pancho", "Agatha", "Flor"};
-        Person friend = new Person("Andres","Ferrari","985746213",28, 1.78, true,friendPets);
-        friend.presentCard();
     }
 }
