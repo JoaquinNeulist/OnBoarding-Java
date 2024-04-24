@@ -20,7 +20,6 @@ public class Person {
         this.age = age;
         this.height = height;
         this.married = married;
-        this.pets = new HashSet<>();
     }
 
     public String getfName() {
@@ -91,8 +90,8 @@ public class Person {
         if (pets.isEmpty()){
             System.out.println("I don't have pets");
         }else{
-            for (Pet pet : pets) System.out.println("- " + pet.getPetName()+", Type: "+ pet.getType()+". age: "+pet.getPetAge());
             System.out.println("I have "+pets.size()+" pet(s):");
+            for (Pet pet : pets) System.out.println("- " + pet.getPetName()+", Type: "+ pet.getType()+". age: "+pet.getPetAge());
         }
     }
 }

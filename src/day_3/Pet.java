@@ -24,10 +24,6 @@ public class Pet {
         return petAge;
     }
 
-    public Person getOwner() {
-        return owner;
-    }
-
     public void setOwner(Person owner) {
         this.owner = owner;
     }

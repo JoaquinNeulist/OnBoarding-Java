@@ -21,41 +21,49 @@ public class CalculatorWithMenu implements CalculatorMenu {
     @Override
     public boolean executeOperation() {
         int option;
-        int num1, num2;
-
-        System.out.print("Enter your first number: ");
-        num1 = scan.nextInt();
-        System.out.print("Enter your second number: ");
-        num2 = scan.nextInt();
-        System.out.print("Enter your option: ");
         option = scan.nextInt();
-
         switch (option){
             case 1:
+        System.out.print("Enter your first number: ");
+        int num1 = scan.nextInt();
+        System.out.print("Enter your second number: ");
+        int num2 = scan.nextInt();
                 int sum = calculator.add(num1, num2);
                 System.out.println("Result: " + sum);
                 return true;
-            case 2:
-                int difference = calculator.subtract(num1, num2);
-                System.out.println("Result: " + difference);
-                return true;
-            case 3:
-                int product = calculator.product(num1, num2);
-                System.out.println("Result: " + product);
-                return true;
-            case 4:
-                if (num2 == 0) {
-                    System.out.println("Error: Division by zero");
-                } else {
-                    int division = calculator.division(num1, num2);
-                    System.out.println("Result: " + division);
-                }
-                return true;
-            default:
-                System.out.println("Invalid option");
-                return false; // Devuelve falso para indicar que se debe cerrar el programa
-        }
+        case 2:
+            System.out.print("Enter your first number: ");
+            num1 = scan.nextInt();
+            System.out.print("Enter your second number: ");
+            num2 = scan.nextInt();
+            int difference = calculator.subtract(num1, num2);
+            System.out.println("Result: " + difference);
+            return true;
+        case 3:
+            System.out.print("Enter your first number: ");
+            num1 = scan.nextInt();
+            System.out.print("Enter your second number: ");
+            num2 = scan.nextInt();
+            int product = calculator.product(num1, num2);
+            System.out.println("Result: " + product);
+            return true;
+        case 4:
+            System.out.print("Enter your first number: ");
+            num1 = scan.nextInt();
+            System.out.print("Enter your second number: ");
+            num2 = scan.nextInt();
+            if (num2 == 0) {
+                System.out.println("Error: Division by zero");
+            } else {
+                int division = calculator.division(num1, num2);
+                System.out.println("Result: " + division);
+            }
+            return true;
+        default:
+            System.out.println("Invalid option");
+            return false; // Devuelve falso para indicar que se debe cerrar el programa
     }
+}
 
     private String generateOptions(){
         return """

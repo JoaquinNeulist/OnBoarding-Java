@@ -1,4 +1,4 @@
-package dia_1;
+package day_1;
 
 import java.util.Scanner;
 
@@ -42,16 +42,16 @@ public class Main {
 //            System.out.println("The number "+num+" is odd");
 //        }
         //ej5
-//            Scanner scanner = new Scanner(System.in);
-//        System.out.println("Enter a String of characters");
-//        String cadena1 = scanner.nextLine();
-//        System.out.println("Enter a Second string of characters");
-//        String cadena2 = scanner.nextLine();
-//        if (cadena1.contentEquals(cadena2)){
-//            System.out.println("The strings are the same "+cadena1);
-//        }else {
-//            System.out.println("The strings are not the same "+cadena1+" and "+cadena2);
-//        }
+            Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a String of characters");
+        String cadena1 = scanner.nextLine();
+        System.out.println("Enter a Second string of characters");
+        String cadena2 = scanner.nextLine();
+        if (cadena1.contentEquals(cadena2)){
+            System.out.println("The strings are the same "+cadena1);
+        }else {
+            System.out.println("The strings are not the same "+cadena1+" and "+cadena2);
+        }
         //ej6
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.print("Enter a number: ");
@@ -115,7 +115,8 @@ public class Main {
 //        }
 //        return true;
 //    }
-    //ej9 y 10
+   // ej9 y 10
+
 //        Scanner scan = new Scanner(System.in);
 //        System.out.println("Enter 2 numbers");
 //        int num1 = scan.nextInt();
@@ -124,7 +125,7 @@ public class Main {
 //        do{
 //            System.out.println("Calculator menu");
 //            System.out.println("1. Add");
-//            System.out.println("2. Subtrat");
+//            System.out.println("2. Subtract");
 //            System.out.println("3. Multiply");
 //            System.out.println("4. Divide");
 //            System.out.println("0. Exit");
@@ -163,67 +164,68 @@ public class Main {
 //                break;
 //        }
 //        }while (choice != 0);
+
     //ej11 y 12
-        Scanner scan = new Scanner(System.in);
-        int availableCapacity = 500;
-        double moneyRaised = 0.0;
-        int choice;
-        do {
-            System.out.println("Welcome to la bolera.");
-            System.out.println("1. Data entry.");
-            System.out.println("2. Available capacity.");
-            System.out.println("3. Money raised.");
-            System.out.println("4. Log out.");
-            System.out.println("Chose your option:");
-            choice = scan.nextInt();
-            switch (choice){
-                case 1:
-                    System.out.println("Enter your age:");
-                    int age = scan.nextInt();
-                    System.out.println("Enter your id");
-                    String id = scan.next();
-                    System.out.println("Enter your name");
-                    String name = scan.next();
-                    System.out.println("What pass do you have:");
-                    String pass = scan.next();
-                    if (age < 21){
-                        System.out.println("Sorry, only persons over 21 years old are allowed entry.");
-                        return;
-                    }
-                    double ticketPrice = 1500.0;
-                    if (pass.equalsIgnoreCase("VIP")) {
-                        System.out.println("Welcome VIP! Your entry is free.");
-                    } else if (pass.equalsIgnoreCase("Discount")) {
-                        System.out.println("Welcome with discount! Your ticket is half price.");
-                        ticketPrice /= 2;
-                    } else {
-                        System.out.println("Pass type not recognized. Regular ticket price will be charged.");
-                    }
-                        System.out.print("Do you want to buy a regular (R) or VIP (V) ticket? ");
-                        String ticketType = scan.next();
-                        if (ticketType.equalsIgnoreCase("V")) {
-                            ticketPrice = 2000.0; //
-                            System.out.println("Welcome VIP. Thank you for your purchase.");
-                        } else {
-                            System.out.println("Welcome. Thank you for your purchase.");
-                        }
-                        moneyRaised += ticketPrice;
-                        availableCapacity--;
-                        System.out.println("Enjoy your time at the bowling alley.");
-                    break;
-                case 2:
-                    System.out.println("Available capacity: "+availableCapacity);
-                    break;
-                case 3:
-                    System.out.println("Money raised: $"+moneyRaised);
-                    break;
-                case 4:
-                    System.out.println("You_log_out.");
-                    break;
-                default:
-                    System.out.println("Jimmy option"); //South park reference
-                    break;
-            }
-        }while (choice!=4);
+//        Scanner scan = new Scanner(System.in);
+//        int availableCapacity = 500;
+//        double moneyRaised = 0.0;
+//        int choice;
+//        do {
+//            System.out.println("Welcome to la bolera.");
+//            System.out.println("1. Data entry.");
+//            System.out.println("2. Available capacity.");
+//            System.out.println("3. Money raised.");
+//            System.out.println("4. Log out.");
+//            System.out.println("Chose your option:");
+//            choice = scan.nextInt();
+//            switch (choice){
+//                case 1:
+//                    System.out.println("Enter your age:");
+//                    int age = scan.nextInt();
+//                    System.out.println("Enter your id");
+//                    String id = scan.next();
+//                    System.out.println("Enter your name");
+//                    String name = scan.next();
+//                    System.out.println("What pass do you have:");
+//                    String pass = scan.next();
+//                    if (age < 21){
+//                        System.out.println("Sorry, only persons over 21 years old are allowed entry.");
+//                        return;
+//                    }
+//                    double ticketPrice = 1500.0;
+//                    if (pass.equalsIgnoreCase("VIP")) {
+//                        System.out.println("Welcome VIP! Your entry is free.");
+//                    } else if (pass.equalsIgnoreCase("Discount")) {
+//                        System.out.println("Welcome with discount! Your ticket is half price.");
+//                        ticketPrice /= 2;
+//                    } else {
+//                        System.out.println("Pass type not recognized. Regular ticket price will be charged.");
+//                    }
+//                        System.out.print("Do you want to buy a regular (R) or VIP (V) ticket? ");
+//                        String ticketType = scan.next();
+//                        if (ticketType.equalsIgnoreCase("V")) {
+//                            ticketPrice = 2000.0; //
+//                            System.out.println("Welcome VIP. Thank you for your purchase.");
+//                        } else {
+//                            System.out.println("Welcome. Thank you for your purchase.");
+//                        }
+//                        moneyRaised += ticketPrice;
+//                        availableCapacity--;
+//                        System.out.println("Enjoy your time at the bowling alley.");
+//                    break;
+//                case 2:
+//                    System.out.println("Available capacity: "+availableCapacity);
+//                    break;
+//                case 3:
+//                    System.out.println("Money raised: $"+moneyRaised);
+//                    break;
+//                case 4:
+//                    System.out.println("You_log_out.");
+//                    break;
+//                default:
+//                    System.out.println("Jimmy option"); //South park reference
+//                    break;
+//            }
+//        }while (choice!=4);
     }
 }

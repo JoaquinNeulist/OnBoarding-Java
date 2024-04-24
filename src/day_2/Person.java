@@ -6,7 +6,7 @@ public class Person {
     private String fName;
     private String lName;
     private String identifyCard;
-    private  int age;
+    private int age;
     private double height;
     private boolean married;
     private String[] petsNames;
